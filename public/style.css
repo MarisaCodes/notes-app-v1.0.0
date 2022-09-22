@@ -1,0 +1,194 @@
+:root {
+  --bkg: #1e1e1e;
+  --nav: #505050;
+  --notes: #282828;
+  --note-text: #c5c8c6;
+}
+/* reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--bkg);
+  position: relative;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--note-text);
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: var(--note-text);
+  text-decoration: none;
+}
+::selection {
+  background-color: #434548;
+}
+/* note textarea style */
+#note {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bkg);
+  resize: none;
+  border: none;
+  outline: none;
+  line-height: 27px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--note-text);
+  font-size: 16px;
+  padding: 10px 0px 0px 20px;
+}
+.menu {
+  background-color: var(--bkg);
+  box-shadow: 0 0 20px black;
+  color: var(--note-text);
+  width: 150px;
+  height: fit-content;
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  left: 20px;
+  top: 55px;
+  border-radius: 5px;
+  user-select: none;
+}
+.menu a,
+.create-menu a,
+.create-menu li,
+.options li {
+  color: var(--note-text);
+  width: fit-content;
+  padding: 5px;
+  background-color: #3c3c3c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-menu li {
+  background-color: #3c3c3c;
+}
+.menu a:hover,
+.create-menu a:hover,
+.create-menu li:hover,
+.options li:hover {
+  background-color: #434548;
+}
+.options li#date {
+  background-color: #191919;
+  font-size: 12px;
+}
+.nav-bar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  gap: 4px;
+  cursor: pointer;
+}
+.burger-icon div {
+  height: 2px;
+  width: 25px;
+  background-color: #c4c4c4;
+  border-radius: 1px;
+}
+#search-notes {
+  outline: none;
+  background-color: #3c3c3c;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: var(--note-text);
+  width: 100%;
+}
+#search-notes:hover,
+#search-notes:focus {
+  background-color: #191919;
+}
+.empty-page-text {
+  color: var(--note-text);
+  align-self: center;
+  padding-top: 250px;
+}
+.create-menu {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #282828;
+  user-select: none;
+}
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.notes div {
+  border: 2px solid var(--nav);
+  padding: 10px;
+  border-radius: 5px;
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.notes div:hover {
+  border: 2px solid #3655b5;
+}
+.notes div.focus {
+  overflow: visible;
+  white-space: break-spaces;
+  color: #b6b9b7;
+  background-color: #191919;
+}
+.note-text {
+  width: fit-content;
+  height: fit-content;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.dialog-box {
+  padding: 10px;
+  background-color: var(--notes);
+  color: var(--note-text);
+  box-shadow: 0 0 20px black;
+  border-radius: 5px;
+  width: fit-content;
+  align-self: center;
+  position: fixed;
+  top: 72px;
+}
+
+.display {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #search-notes {
+    width: 50%;
+  }
+}
